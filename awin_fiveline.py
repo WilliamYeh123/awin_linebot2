@@ -52,7 +52,7 @@ db = orm.Session(engine)
 
 NAME = 'William'
 PASSWORD = '4795e9e44a96c607fd36f94de89b7d76'
-LINE_TOKEN = 'hpEeLWBBW3HCwgirFWfsg7n4GmqQq34pPc/KJJtpQz3wGPBmo0QZkTR/cmke7CkCPubFQIEqBfpZ+sdngdKsok/2VNU6fZIN8DrCwLAkrO03ZUjNpxRB3LQA2Pi4MfPlmLT7eaT36chuOxlYVKhgJwdB04t89/1O/w1cDnyilFU='
+LINE_TOKEN = '5xUWe1WuZNtHtNMpTNK49WOD9z3Hzx7gA+gjVZjWJysW4YF6lVSdNCG+5gKW5HPePubFQIEqBfpZ+sdngdKsok/2VNU6fZIN8DrCwLAkrO0B7ynIBnooa/lO+j3KWAvBNCJecp63w2KfMSjkgdVdqAdB04t89/1O/w1cDnyilFU='
 if not db.query(User).filter(User.token==LINE_TOKEN).first():
 	db.add(User(account=NAME,password=PASSWORD,name=NAME,auth='line',token=LINE_TOKEN))
 	db.commit()
