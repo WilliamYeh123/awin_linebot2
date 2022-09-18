@@ -24,6 +24,8 @@ class Fiveline_2std(Fiveline):
     def buy(self,t,i):
         return t.Close>self.mid[i]-2*self.std
 
+
+#123
 bt = Backtest(data)
 bt.run(Fiveline)
 bt.run(Fiveline_2std)
@@ -48,9 +50,9 @@ class BidOrder(Base):
 Base.metadata.create_all(engine)
 db = orm.Session(engine)
 
-NAME = 'chuboy'
-PASSWORD = 'ecb252044b5ea0f679ee78ec1a12904739e2904d'
-LINE_TOKEN = 'U807315464d1f025a19b65e6edd6ff003'
+NAME = 'William'
+PASSWORD = '4795e9e44a96c607fd36f94de89b7d76'
+LINE_TOKEN = 'hpEeLWBBW3HCwgirFWfsg7n4GmqQq34pPc/KJJtpQz3wGPBmo0QZkTR/cmke7CkCPubFQIEqBfpZ+sdngdKsok/2VNU6fZIN8DrCwLAkrO03ZUjNpxRB3LQA2Pi4MfPlmLT7eaT36chuOxlYVKhgJwdB04t89/1O/w1cDnyilFU='
 if not db.query(User).filter(User.token==LINE_TOKEN).first():
 	db.add(User(account=NAME,password=PASSWORD,name=NAME,auth='line',token=LINE_TOKEN))
 	db.commit()
